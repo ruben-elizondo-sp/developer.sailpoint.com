@@ -43,8 +43,10 @@ matching your filter criteria.
 
 ## Constructing a Filter
 
-Filters are constructed using a
-[Goessner JSONpath expression](https://goessner.net/articles/JsonPath/).
+Event Trigger Filters are constructed using a
+[Jayway JSONPath expression (https://github.com/json-path/JsonPath)], which is Java port of [Goessner JSONpath expression](https://goessner.net/articles/JsonPath/).
+
+*note: If working with workflows, only workflow triggers uses the advanced Jayway, all other workflow step json evaluatinos use Goessner, which doesn’t support the full list of operators noted here, chiefly the "contains" filter.
 
 ### Expressions
 
@@ -92,7 +94,7 @@ Developing a filter can be faster when you use a tool like an online
 quick feedback on your filter, allowing you to focus on the exact filter
 expression you want before testing it in IdentityNow. Be aware, however, that
 these online tools may have subtle differences compared with SailPoint's
-implementation of Goessner JSONpath. Always test your JSONpath filter in
+implementation of Goessner JSONpath for non-trigger Workflows and Jayway JSONpath for triggers. Always test your JSONpath filter in
 IdentityNow before using it in production.
 
 Start by opening a [JSONpath editor](https://jsonpath.herokuapp.com/) in your
